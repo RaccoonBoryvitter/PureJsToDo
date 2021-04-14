@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TODO with pure HTML5+CSS+Javascript</title>
+    <link rel="stylesheet" href="assets/common/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <h1>My TODO Application</h1>
+    <h5>Credits: r3d_scarf</h5>
+    <div class="create-task-block">
+        <button type="button" class="collapse-button">Create task</button>
+        <form>
+            <fieldset>
+                <legend>New task</legend>
+                <input type="text" name="new-task-name" id="new-task-name" placeholder="Enter your task here" maxlength="18" required>
+                <textarea name="new-task-description" id="new-task-description"
+                          cols="30" rows="10" placeholder="Enter a little description here (optional)"></textarea>
+                <label for="new-task-deadline">Should be ended until: </label>
+                <input type="datetime-local" name="new-task-deadline" id="new-task-deadline" title="This field is unnecessary">
+                <p>Importance level: </p>
+                <div class="new-task-importance-level">
+                    <label for="unnecessary">
+                        <input type="radio" id="unnecessary" name="importance" value="0">Unnecessary</label>
+                    <label for="desirable">
+                        <input type="radio" id="desirable" name="importance" value="1">Desirable</label>
+                    <label for="important">
+                        <input type="radio" id="important" name="importance" value="2">Important</label>
+                </div>
+                <button type="button" id="add-task-button">+ Create</button>
+            </fieldset>
+        </form>
+    </div>
+    <hr>
+    <div class="task-list-block">
+        <h3>Pending tasks: </h3>
+        <ul id="pending-tasks-list">
+            <li class="disclaimer">
+                <p>You haven't created any task yet.
+                    <br> Click the button above to create a new one.</p>
+            </li>
+        </ul>
+        <h3>Completed tasks: </h3>
+        <ul id="completed-tasks-list">
+            <li class="disclaimer">
+                <p>You haven't completed any task yet.
+                    <br> Mark your task if you've already done with it.</p>
+            </li>
+        </ul>
+    </div>
+
+    <script src="assets/common/js/script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+body {
+    font-family: 'Comfortaa', cursive;
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+h1, h2, h5{
+    text-align: center;
+}
+
+button {
+    font-family: 'Comfortaa', cursive;
+}
+
+.create-task-block, .task-list-block {
+    margin: 60px 34%;
+}
+
+.collapse-button {
+    background-color: white;
+    border-radius: 5px;
+    border: 2px solid black;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0 5%;
+    outline: none;
+    padding: 5px 0;
+    transition: .3s linear;
+    width: 90%;
+}
+
+.collapse-button::before {
+    content: "\002B  ";
+}
+
+.active::before {
+    content: "\2212  ";
+}
+
+.active, .collapse-button:hover {
+    color: white;
+    background-color: black;
+}
+
+form {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .2s ease-out;
+}
+
+fieldset {
+    border-radius: 7px;
+    border: 2px solid black;
+    margin-left: 3%;
+    margin-top: 25px;
+    padding: 5px 5px;
+    width: 90%;
+}
+
+legend {
+    background-color: black;
+    color: white;
+}
+
+fieldset > label, p, textarea {
+    margin: 5px 5px;
+}
+
+#new-task-name {
+    border-radius: 5px;
+    border: 1px solid black;
+    display: block;
+    font-family: 'Comfortaa', cursive;
+    font-size: 15px;
+    margin: 5px 5px;
+    padding: 5px 5px;
+    width: 85%;
+}
+
+#new-task-description {
+    border-radius: 5px;
+    border: 1px solid black;
+    display: block;
+    font-family: 'Comfortaa', cursive;
+    font-size: 15px;
+    margin: 5px 5px;
+    padding: 5px 5px;
+    resize: none;
+    width: 85%;
+}
+
+#new-task-deadline {
+    display: inline;
+    font-family: 'Comfortaa', cursive;
+    margin: 0;
+}
+
+
+
+.new-task-importance-level {
+    display: flex;
+    font-size: 12px;
+    justify-content: space-between;
+    margin: 10px 0 25px 5px;
+    width: 75%;
+}
+
+.new-task-importance-level > label > input[type="radio"] {
+    margin: 0 3px;
+    vertical-align: text-top;
+}
+
+#add-task-button {
+    background-color: white;
+    border-radius: 7px;
+    border: 3px solid black;
+    color: black;
+    cursor: pointer;
+    float: right;
+    font-family: 'Comfortaa', cursive;
+    font-size: 15px;
+    margin: 5px 20px 5px 5px;
+    padding: 5px 20px;
+    transition: .3s linear;
+}
+
+#add-task-button:hover {
+    background-color: black;
+    color: white;
+}
+
+
+hr {
+    background-color: black;
+    height: 2px;
+    width: 30%;
+}
+
+
+.disclaimer {
+    display: block;
+    text-align: center;
+}
+
+.hide-disclaimer {
+    display: none;
+}
+
+#pending-tasks-list,
+#completed-tasks-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task-item {
+    align-items: center;
+    background-color: white;
+    border: 1px none black;
+    border-left: 8px solid;
+    cursor: pointer;
+    display: flex;
+    font-size: 20px;
+    justify-content: space-between;
+    margin-top: 10px;
+    outline: none;
+    padding: 10px 5px;
+    transition: .2s linear;
+    width: 100%;
+}
+
+.task-item:hover, .task-expand {
+    background-color: #e0e0e0;
+}
+
+.task-item > .button-sign {
+    display: inline;
+    margin: 1px 10px 3px 0;
+    opacity: 0;
+    transition: opacity .3s linear;
+}
+
+.task-item:hover > .button-sign {
+    opacity: 1;
+}
+
+.task-item > label {
+    width: 15%;
+    height: 50.48%;
+}
+
+.task-item > label > input {
+    cursor: pointer;
+    height: 0;
+    opacity: 0;
+    position: relative;
+    width: 0;
+}
+
+.task-item > label:hover > .checkmark {
+    background-color: #b9b9b9;
+}
+
+.task-item > label > input:checked ~ .checkmark {
+    background-color: #279d30;
+    border-color: #279d30;
+}
+
+.task-item > label > input:checked ~ .checkmark::after {
+    border-left-color: white;
+    border-bottom-color: white;
+    opacity: 1;
+}
+
+.task-content {
+    background-color: #e0e0e0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .2s ease-out;
+}
+
+.checkmark {
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    transition: .2s linear;
+    width: 20px;
+}
+
+.checkmark::after {
+    border: 3px solid transparent;
+    content: "";
+    display: block;
+    height: 10px;
+    opacity: 0;
+    transform: translateX(55%) scaleX(-1) rotate(-38deg);
+    transition: all .3s ease;
+    width: 4px;
+}
+
+.task-title {
+    text-decoration: none;
+}
+
+.task-edit, .task-delete {
+    display: block;
+    float: right;
+    margin: 0 10px 10px 0;
+    background-color: white;
+    border-radius: 7px;
+    color: black;
+    cursor: pointer;
+    font-family: 'Comfortaa', cursive;
+    font-size: 15px;
+    padding: 3px 6px;
+    transition: .3s linear;
+}
+
+.task-delete {
+    border: 1px solid #b92817;
+}
+
+.task-edit {
+    border: 1px solid #22b332;
+}
+
+.task-delete:hover {
+    background-color: #b92817;
+    color: white;
+}
+
+.task-edit:hover {
+    background-color: #22b332;
+    color: white;
+}
+
+
+
