@@ -1,0 +1,34 @@
+$ cd D:/University/Projects/Shedual - створюємо репозиторій в заданому каталозі
+
+$ git init - створює підкаталог з іменем .git
+
+$ git add *.c - всі з певним розширенням .c
+$ git add назва_файлу_для_відслідковування
+$ git commit -m 'initial project version' - закомітити проект 'назва коміту'
+
+$ git status
+
+$ git log - Перегляд історії коммітів
+
+$ git diff - перегляд змін в файлі
+
+в git log --oneline - виводить кожен комміт в один рядок
+
+$ git checkout назва_файлу - cкасовує зміни файлу
+
+$ git commit --amend -m "initial project version"
+
+$ git rm assets/LICENSE.txt
+
+$ git log -p file.txt - История конкретного файла
+
+$ git reset HEAD назва_фалу - повернути файл назад в непроіндексований
+
+$ git ls-tree HEAD - виводить файли (папки), які є в конкретному бренчі
+
+===================================================================================
+$ git config --global user.name "Alexandr"
+$ git config --global user.email alex19best78@gmail.com
+
+$ git config --list
+$ git config user.name
